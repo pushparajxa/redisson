@@ -99,7 +99,8 @@ public class RedissonExecutorService implements RScheduledExecutorService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(RedissonExecutorService.class);
     
-    private static final RemoteInvocationOptions RESULT_OPTIONS = RemoteInvocationOptions.defaults().noAck().expectResultWithin(1, TimeUnit.HOURS);
+    private static final RemoteInvocationOptions RESULT_OPTIONS = RemoteInvocationOptions
+        .defaults().noAck().expectResultWithin(7, TimeUnit.DAYS);
     
     public static final int SHUTDOWN_STATE = 1;
     public static final int TERMINATED_STATE = 2;
